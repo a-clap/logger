@@ -20,3 +20,13 @@ type Logger interface {
 	Debugf(format string, args ...interface{})
 	Debug(args ...interface{})
 }
+
+var log Logger
+
+func Init(logger Logger) {
+	log = logger
+}
+
+func Get() Logger {
+	return log
+}
