@@ -1,0 +1,38 @@
+= Logger
+:toc: left
+
+Logger package for private use.
+
+== What is this?
+
+Simple logger package (mainly interface for zap/maybe something else in future) which I use in my own code.
+
+== How to use it?
+
+Here You have primitive snippet
+
+[source,go]
+----
+package main
+
+import (
+	"github.com/a-clap/logger"
+	"go.uber.org/zap/zapcore"
+)
+
+func main() {
+	logger.Init(logger.NewDefaultZap(zapcore.DebugLevel))
+	log := logger.Get()
+	log.Debug("Hello world!")
+}
+----
+
+You will see colored output in console like
+
+[source]
+----
+2022-08-19 21:21:20.955 DEBUG   cmd/main.go:16  hello world!
+----
+
+
+
