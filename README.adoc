@@ -22,12 +22,11 @@ import (
 
 func main() {
 	logger.Init(logger.NewDefaultZap(zapcore.DebugLevel))
-	log := logger.Get()
-	log.Debug("Hello world!")
+	logger.Log.Debug("hello world!")
 }
 ----
 
-You will see colored output in console like
+You will see colored output in console like:
 
 [source]
 ----

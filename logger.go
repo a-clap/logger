@@ -21,12 +21,8 @@ type Logger interface {
 	Debug(args ...interface{})
 }
 
-var log Logger
+var Log Logger
 
 func Init(logger Logger) {
-	log = logger
-}
-
-func Get() Logger {
-	return log
+	Log = logger
 }
