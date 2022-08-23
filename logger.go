@@ -21,8 +21,39 @@ type Logger interface {
 	Debug(args ...interface{})
 }
 
-var Log Logger
+var log Logger
 
 func Init(logger Logger) {
-	Log = logger
+	log = logger
+}
+
+func Errorf(format string, args ...interface{}) {
+	log.Errorf(format, args...)
+}
+func Error(args ...interface{}) {
+	log.Error(args...)
+}
+func Fatalf(format string, args ...interface{}) {
+	log.Fatalf(format, args...)
+}
+func Fatal(args ...interface{}) {
+	log.Fatal(args...)
+}
+func Infof(format string, args ...interface{}) {
+	log.Infof(format, args...)
+}
+func Info(args ...interface{}) {
+	log.Info(args...)
+}
+func Warnf(format string, args ...interface{}) {
+	log.Warnf(format, args...)
+}
+func Warn(args ...interface{}) {
+	log.Warn(args...)
+}
+func Debugf(format string, args ...interface{}) {
+	log.Debugf(format, args...)
+}
+func Debug(args ...interface{}) {
+	log.Debug(args...)
 }
