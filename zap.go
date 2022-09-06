@@ -20,3 +20,10 @@ func NewDefaultZap(level zapcore.Level) *zap.SugaredLogger {
 	}
 	return log.Sugar()
 }
+
+func NewNop() *zap.SugaredLogger {
+	return zap.NewNop().Sugar()
+}
+
+var _ Logger = NewDefaultZap(zapcore.DebugLevel)
+var _ Logger = NewNop()
